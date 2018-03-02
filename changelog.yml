@@ -1,0 +1,8 @@
+url: https://github.com/laraplug/user-module
+versions:
+    "1.0.0":
+        changed:
+            - Supports Profile Module's fields blade injection at register page
+            - Add Translation files
+            - Make Request configurable
+            - Remove Vue.js Routes and restore Laravel Blade view from original User Module
