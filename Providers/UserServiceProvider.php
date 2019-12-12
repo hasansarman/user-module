@@ -69,10 +69,7 @@ class UserServiceProvider extends ServiceProvider
             BuildingSidebar::class,
             $this->getSidebarClassForModule('user', RegisterUserSidebar::class)
         );
-        $this->app['events']->listen(LoadingBackendTranslations::class, function (LoadingBackendTranslations $event) {
-            $event->load('users', array_dot(trans('user::users')));
-            $event->load('roles', array_dot(trans('user::roles')));
-        });
+        
         $this->commands([
             GrantModulePermissionsCommand::class,
             RemoveModulePermissionsCommand::class,

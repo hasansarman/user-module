@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
 @section('content-header')
-<h1>
-    {{ trans('user::roles.title.edit') }} <small>{{ $role->name }}</small>
-</h1>
+<h6>
+    {{ _ths('edit') }} <small>{{ $role->name }}</small>
+</h6>
 <ol class="breadcrumb">
-    <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-    <li class=""><a href="{{ route('admin.user.role.index') }}">{{ trans('user::roles.breadcrumb.roles') }}</a></li>
-    <li class="active">{{ trans('user::roles.breadcrumb.edit') }}</li>
+    <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ _ths('home') }}</a></li>
+    <li class=""><a href="{{ route('admin.user.role.index') }}">{{ _ths('roles') }}</a></li>
+    <li class="active">{{ _ths('edit') }}</li>
 </ol>
 @stop
 
@@ -17,9 +17,9 @@
     <div class="col-md-12">
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab_1-1" data-toggle="tab">{{ trans('user::roles.tabs.data') }}</a></li>
-                <li class=""><a href="#tab_2-2" data-toggle="tab">{{ trans('user::roles.tabs.permissions') }}</a></li>
-                <li class=""><a href="#tab_3-3" data-toggle="tab">{{ trans('user::users.title.users') }}</a></li>
+                <li class="active"><a href="#tab_1-1" data-toggle="tab">{{ _ths('data') }}</a></li>
+                <li class=""><a href="#tab_2-2" data-toggle="tab">{{ _ths('permissions') }}</a></li>
+                <li class=""><a href="#tab_3-3" data-toggle="tab">{{ _ths('users') }}</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="tab_1-1">
@@ -27,15 +27,15 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                    {!! Form::label('name', trans('user::roles.form.name')) !!}
-                                    {!! Form::text('name', old('name', $role->name), ['class' => 'form-control', 'data-slug' => 'source', 'placeholder' => trans('user::roles.form.name')]) !!}
+                                    {!! Form::label('name', _ths('name')) !!}
+                                    {!! Form::text('name', old('name', $role->name), ['class' => 'form-control', 'data-slug' => 'source', 'placeholder' => _ths('name')]) !!}
                                     {!! $errors->first('name', '<span class="help-block">:message</span>') !!}
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
-                                    {!! Form::label('slug', trans('user::roles.form.slug')) !!}
-                                    {!! Form::text('slug', old('slug', $role->slug), ['class' => 'form-control slug', 'data-slug' => 'target', 'placeholder' => trans('user::roles.form.slug')]) !!}
+                                    {!! Form::label('slug', _ths('slug')) !!}
+                                    {!! Form::text('slug', old('slug', $role->slug), ['class' => 'form-control slug', 'data-slug' => 'target', 'placeholder' => _ths('slug')]) !!}
                                     {!! $errors->first('slug', '<span class="help-block">:message</span>') !!}
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                     <div class="box-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3>{{ trans('user::roles.title.users-with-roles') }}</h3>
+                                <h3>{{ _ths('users with roles') }}</h3>
                                 <ul>
                                     <?php foreach ($role->users as $user): ?>
                                         <li>
@@ -62,8 +62,8 @@
                     </div>
                 </div>
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary btn-flat">{{ trans('user::button.update') }}</button>
-                    <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.user.role.index')}}"><i class="fa fa-times"></i> {{ trans('user::button.cancel') }}</a>
+                    <button type="submit" class="btn btn-primary btn-flat">{{ _ths('update') }}</button>
+                    <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.user.role.index')}}"><i class="fa fa-times"></i> {{ _ths('cancel') }}</a>
                 </div>
             </div><!-- /.tab-content -->
         </div>
@@ -77,7 +77,7 @@
 @section('shortcuts')
     <dl class="dl-horizontal">
         <dt><code>b</code></dt>
-        <dd>{{ trans('user::roles.navigation.back to index') }}</dd>
+        <dd>{{ _ths('back to index') }}</dd>
     </dl>
 @stop
 

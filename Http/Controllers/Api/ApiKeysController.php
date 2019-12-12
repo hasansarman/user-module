@@ -43,7 +43,7 @@ class ApiKeysController extends Controller
 
         return response()->json([
             'errors' => false,
-            'message' => trans('user::users.token generated'),
+            'message' => _ths('token generated'),
             'data' => ApiKeysTransformer::collection($tokens),
         ]);
     }
@@ -55,7 +55,7 @@ class ApiKeysController extends Controller
 
         return response()->json([
             'errors' => false,
-            'message' => trans('user::users.token deleted'),
+            'message' => _ths('token deleted'),
             'data' => ApiKeysTransformer::collection($tokens),
         ]);
     }

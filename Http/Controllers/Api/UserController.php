@@ -57,7 +57,7 @@ class UserController extends Controller
 
         return response()->json([
             'errors' => false,
-            'message' => trans('user::messages.user created'),
+            'message' => _ths('user created'),
         ]);
     }
 
@@ -69,7 +69,7 @@ class UserController extends Controller
 
         return response()->json([
             'errors' => false,
-            'message' => trans('user::messages.user updated'),
+            'message' => _ths('user updated'),
         ]);
     }
 
@@ -79,7 +79,7 @@ class UserController extends Controller
 
         return response()->json([
             'errors' => false,
-            'message' => trans('user::messages.user deleted'),
+            'message' => _ths('user deleted'),
         ]);
     }
 
@@ -91,7 +91,7 @@ class UserController extends Controller
 
         return response()->json([
             'errors' => false,
-            'message' => trans('user::auth.reset password email was sent'),
+            'message' => _ths('reset password email was sent'),
         ]);
     }
 

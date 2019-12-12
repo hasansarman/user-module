@@ -41,7 +41,7 @@ class ProfileController extends Controller
 
         return response()->json([
             'errors' => false,
-            'message' => trans('user::messages.profile updated'),
+            'message' => _ths('profile updated'),
         ]);
     }
 }

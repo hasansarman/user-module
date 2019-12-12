@@ -56,7 +56,7 @@ class RolesController extends BaseUserModuleController
         $this->role->create($data);
 
         return redirect()->route('admin.user.role.index')
-            ->withSuccess(trans('user::messages.role created'));
+            ->withSuccess(_ths('role created'));
     }
 
     /**
@@ -84,7 +84,7 @@ class RolesController extends BaseUserModuleController
         $this->role->update($role->id, $data);
 
         return redirect()->route('admin.user.role.index')
-            ->withSuccess(trans('user::messages.role updated'));
+            ->withSuccess(_ths('role updated'));
     }
 
     /**
@@ -98,6 +98,6 @@ class RolesController extends BaseUserModuleController
         $this->role->delete($role->id);
 
         return redirect()->route('admin.user.role.index')
-            ->withSuccess(trans('user::messages.role deleted'));
+            ->withSuccess(_ths('role deleted'));
     }
 }

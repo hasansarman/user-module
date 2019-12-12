@@ -31,7 +31,7 @@ class AuthorisedApiToken
         if ($this->isValidToken($token) === false) {
             return response()->json([
                 'errors' => true,
-                'message' => trans('core::core.unauthorized')
+                'message' => _ths('unauthorized')
             ], 403);
         }
 

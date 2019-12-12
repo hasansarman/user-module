@@ -44,6 +44,11 @@
       "Modules\\User\\Tests\\": "Tests"
     }
   },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.0.x-dev"
+    }
+  },
   "minimum-stability": "dev",
   "prefer-stable": true
 }

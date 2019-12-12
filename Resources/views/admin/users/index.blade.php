@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
 @section('content-header')
-<h1>
-    {{ trans('user::users.title.users') }}
-</h1>
+<h6>
+    {{ _ths('users') }}
+</h6>
 <ol class="breadcrumb">
-    <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-    <li class="active">{{ trans('user::users.breadcrumb.users') }}</li>
+    <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ _ths('home') }}</a></li>
+    <li class="active">{{ _ths('users') }}</li>
 </ol>
 @stop
 
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="btn-group pull-right" style="margin: 0 15px 15px 0;">
                 <a href="{{ route('admin.user.user.create') }}" class="btn btn-primary btn-flat" style="padding: 4px 10px;">
-                    <i class="fa fa-pencil"></i> {{ trans('user::users.button.new-user') }}
+                    <i class="fa fa-pencil"></i> {{ _ths('new-user') }}
                 </a>
             </div>
         </div>
@@ -29,11 +29,11 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>{{ trans('user::users.table.first-name') }}</th>
-                            <th>{{ trans('user::users.table.last-name') }}</th>
-                            <th>{{ trans('user::users.table.email') }}</th>
-                            <th>{{ trans('user::users.table.created-at') }}</th>
-                            <th data-sortable="false">{{ trans('user::users.table.actions') }}</th>
+                            <th>{{ _ths('firstname') }}</th>
+                            <th>{{ _ths('lastname') }}</th>
+                            <th>{{ _ths('email') }}</th>
+                            <th>{{ _ths('created at') }}</th>
+                            <th data-sortable="false">{{ _ths('actions') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,11 +80,11 @@
                     <tfoot>
                         <tr>
                             <th>Id</th>
-                            <th>{{ trans('user::users.table.first-name') }}</th>
-                            <th>{{ trans('user::users.table.last-name') }}</th>
-                            <th>{{ trans('user::users.table.email') }}</th>
-                            <th>{{ trans('user::users.table.created-at') }}</th>
-                            <th>{{ trans('user::users.table.actions') }}</th>
+                            <th>{{ _ths('firstname') }}</th>
+                            <th>{{ _ths('lastname') }}</th>
+                            <th>{{ _ths('email') }}</th>
+                            <th>{{ _ths('created at') }}</th>
+                            <th>{{ _ths('actions') }}</th>
                         </tr>
                     </tfoot>
                 </table>

@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
 @section('content-header')
-<h1>
-    {{ trans('user::roles.title.roles') }}
-</h1>
+<h6>
+    {{ _ths('roles') }}
+</h6>
 <ol class="breadcrumb">
-    <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-    <li class="active">{{ trans('user::roles.breadcrumb.roles') }}</li>
+    <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ _ths('home') }}</a></li>
+    <li class="active">{{ _ths('roles') }}</li>
 </ol>
 @stop
 
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="btn-group pull-right" style="margin: 0 15px 15px 0;">
                 <a href="{{ route('admin.user.role.create') }}" class="btn btn-primary btn-flat" style="padding: 4px 10px;">
-                    <i class="fa fa-pencil"></i> {{ trans('user::roles.new-role') }}
+                    <i class="fa fa-pencil"></i> {{ _ths('new role') }}
                 </a>
             </div>
         </div>
@@ -29,9 +29,9 @@
                     <thead>
                         <tr>
                             <td>Id</td>
-                            <th>{{ trans('user::roles.table.name') }}</th>
-                            <th>{{ trans('user::users.table.created-at') }}</th>
-                            <th data-sortable="false">{{ trans('user::users.table.actions') }}</th>
+                            <th>{{ _ths('name') }}</th>
+                            <th>{{ _ths('created at') }}</th>
+                            <th data-sortable="false">{{ _ths('actions') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -66,9 +66,9 @@
                     <tfoot>
                         <tr>
                             <td>Id</td>
-                            <th>{{ trans('user::roles.table.name') }}</th>
-                            <th>{{ trans('user::users.table.created-at') }}</th>
-                            <th>{{ trans('user::users.table.actions') }}</th>
+                            <th>{{ _ths('name') }}</th>
+                            <th>{{ _ths('created at') }}</th>
+                            <th>{{ _ths('actions') }}</th>
                         </tr>
                     </tfoot>
                 </table>

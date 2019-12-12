@@ -34,8 +34,8 @@ class RegisterRequest extends FormRequest
     public function messages()
     {
         $baseMessages = [
-            'email.required' => trans('user::auth.email is required'),
-            'password.required' => trans('user::auth.password is required'),
+            'email.required' => _ths('email is required'),
+            'password.required' => _ths('password is required'),
         ];
         $additionalMessages = config('asgard.user.config.requests.register.messages');
         return is_array($additionalMessages) ? $baseMessages + $additionalMessages : $baseMessages;

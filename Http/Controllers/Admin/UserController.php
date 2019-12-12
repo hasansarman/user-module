@@ -86,7 +86,7 @@ class UserController extends BaseUserModuleController
         $this->user->createWithRoles($data, $request->roles, true);
 
         return redirect()->route('admin.user.user.index')
-            ->withSuccess(trans('user::messages.user created'));
+            ->withSuccess(_ths('user created'));
     }
 
     /**
@@ -99,7 +99,7 @@ class UserController extends BaseUserModuleController
     {
         if (!$user) {
             return redirect()->route('admin.user.user.index')
-                ->withError(trans('user::messages.user not found'));
+                ->withError(_ths('user not found'));
         }
         $roles = $this->role->all();
 
@@ -123,11 +123,11 @@ class UserController extends BaseUserModuleController
 
         if ($request->get('button') === 'index') {
             return redirect()->route('admin.user.user.index')
-                ->withSuccess(trans('user::messages.user updated'));
+                ->withSuccess(_ths('user updated'));
         }
 
         return redirect()->back()
-            ->withSuccess(trans('user::messages.user updated'));
+            ->withSuccess(_ths('user updated'));
     }
 
     /**
@@ -141,7 +141,7 @@ class UserController extends BaseUserModuleController
         $this->user->delete($user->id);
 
         return redirect()->route('admin.user.user.index')
-            ->withSuccess(trans('user::messages.user deleted'));
+            ->withSuccess(_ths('user deleted'));
     }
 
     public function sendResetPassword(User $user, Authentication $auth)
@@ -152,6 +152,6 @@ class UserController extends BaseUserModuleController
         event(new UserHasBegunResetProcess($user, $code));
 
         return redirect()->route('admin.user.user.edit', $user->id)
-            ->withSuccess(trans('user::auth.reset password email was sent'));
+            ->withSuccess(_ths('reset password email was sent'));
     }
 }

@@ -26,13 +26,13 @@ class SentinelAuthentication implements Authentication
                 return false;
             }
 
-            return trans('user::users.invalid login or password');
+            return _ths('invalid login or password');
         } catch (NotActivatedException $e) {
-            return trans('user::users.account not validated');
+            return _ths('account not validated');
         } catch (ThrottlingException $e) {
             $delay = $e->getDelay();
 
-            return trans('user::users.account is blocked', ['delay' => $delay]);
+            return _ths('account is blocked', ['delay' => $delay]);
         }
     }
 

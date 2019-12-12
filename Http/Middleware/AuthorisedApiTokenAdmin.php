@@ -23,14 +23,14 @@ class AuthorisedApiTokenAdmin
         if ($request->header('Authorization') === null) {
             return response()->json([
                 'errors' => true,
-                'message' => trans('core::core.unauthorized')
+                'message' => _ths('unauthorized')
             ], 403);
         }
 
         if ($this->isValidToken($request->header('Authorization')) === false) {
             return response()->json([
                 'errors' => true,
-                'message' => trans('core::core.unauthorized')
+                'message' => _ths('unauthorized')
             ], 403);
         }
 

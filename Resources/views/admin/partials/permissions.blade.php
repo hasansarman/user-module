@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-md-6">
             <p class="pull-right" style="margin-top: 10px;">
-                <a href="" class="jsSelectEveryAllAllow">{{ trans('user::roles.allow all')}}</a> |
-                <a href="" class="jsSelectEveryAllDeny">{{ trans('user::roles.deny all')}}</a> |
-                <a href="" class="jsSelectEveryAllInherit">{{ trans('user::roles.inherit all')}}</a>
+                <a href="" class="jsSelectEveryAllAllow">{{ _ths('allow all')}}</a> |
+                <a href="" class="jsSelectEveryAllDeny">{{ _ths('deny all')}}</a> |
+                <a href="" class="jsSelectEveryAllInherit">{{ _ths('inherit all')}}</a>
             </p>
         </div>
     </div>
@@ -30,9 +30,9 @@
                             <div class="col-md-6">
                                 <h4 class="pull-left">{{ ucfirst($subPermissionTitle) }}</h4>
                                 <p class="pull-right" style="margin-top: 10px;">
-                                    <a href="" class="jsSelectAllAllow">{{ trans('user::roles.allow all')}}</a> |
-                                    <a href="" class="jsSelectAllDeny">{{ trans('user::roles.deny all')}}</a> |
-                                    <a href="" class="jsSelectAllInherit">{{ trans('user::roles.inherit all')}}</a>
+                                    <a href="" class="jsSelectAllAllow">{{ _ths('allow all')}}</a> |
+                                    <a href="" class="jsSelectAllDeny">{{ _ths('deny all')}}</a> |
+                                    <a href="" class="jsSelectAllInherit">{{ _ths('inherit all')}}</a>
                                 </p>
                             </div>
                         </div>

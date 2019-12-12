@@ -60,7 +60,7 @@ class RoleController extends Controller
 
         return response()->json([
             'errors' => false,
-            'message' => trans('user::messages.role created'),
+            'message' => _ths('role created'),
         ]);
     }
 
@@ -72,7 +72,7 @@ class RoleController extends Controller
 
         return response()->json([
             'errors' => false,
-            'message' => trans('user::messages.role updated'),
+            'message' => _ths('role updated'),
         ]);
     }
 
@@ -82,7 +82,7 @@ class RoleController extends Controller
 
         return response()->json([
             'errors' => false,
-            'message' => trans('user::messages.role deleted'),
+            'message' => _ths('role deleted'),
         ]);
     }
 

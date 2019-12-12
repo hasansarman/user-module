@@ -56,6 +56,6 @@ class ProfileController extends AdminBaseController
         $this->user->update($user, $request->all());
 
         return redirect()->back()
-            ->withSuccess(trans('user::messages.profile updated'));
+            ->withSuccess(_ths('profile updated'));
     }
 }

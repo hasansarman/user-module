@@ -43,7 +43,7 @@ class AuthController extends BasePublicController
         }
 
         return redirect()->intended(route(config('asgard.user.config.redirect_route_after_login')))
-                ->withSuccess(trans('user::messages.successfully logged in'));
+                ->withSuccess(_ths('successfully logged in'));
     }
 
     public function getRegister()
@@ -56,7 +56,7 @@ class AuthController extends BasePublicController
         app(UserRegistration::class)->register($request->all());
 
         return redirect()->route('register')
-            ->withSuccess(trans('user::messages.account created check email for activation'));
+            ->withSuccess(_ths('account created check email for activation'));
     }
 
     public function getLogout()
@@ -70,11 +70,11 @@ class AuthController extends BasePublicController
     {
         if ($this->auth->activate($userId, $code)) {
             return redirect()->route('login')
-                ->withSuccess(trans('user::messages.account activated you can now login'));
+                ->withSuccess(_ths('account activated you can now login'));
         }
 
         return redirect()->route('register')
-            ->withError(trans('user::messages.there was an error with the activation'));
+            ->withError(_ths('there was an error with the activation'));
     }
 
     public function getReset()
@@ -88,11 +88,11 @@ class AuthController extends BasePublicController
             app(UserResetter::class)->startReset($request->all());
         } catch (UserNotFoundException $e) {
             return redirect()->back()->withInput()
-                ->withError(trans('user::messages.no user found'));
+                ->withError(_ths('no user found'));
         }
 
         return redirect()->route('reset')
-            ->withSuccess(trans('user::messages.check email to reset password'));
+            ->withSuccess(_ths('check email to reset password'));
     }
 
     public function getResetComplete()
@@ -108,13 +108,13 @@ class AuthController extends BasePublicController
             );
         } catch (UserNotFoundException $e) {
             return redirect()->back()->withInput()
-                ->withError(trans('user::messages.user no longer exists'));
+                ->withError(_ths('user no longer exists'));
         } catch (InvalidOrExpiredResetCode $e) {
             return redirect()->back()->withInput()
-                ->withError(trans('user::messages.invalid reset code'));
+                ->withError(_ths('invalid reset code'));
         }
 
         return redirect()->route('login')
-            ->withSuccess(trans('user::messages.password reset'));
+            ->withSuccess(_ths('password reset'));
     }
 }
