@@ -25,7 +25,7 @@ class PermissionManager
     public function all()
     {
         $permissions = [];
-        foreach ($this->module->enabled() as $enabledModule) {
+        foreach ($this->module->all() as $enabledModule) {
             $configuration = config(strtolower('asgard.' . $enabledModule->getName()) . '.permissions');
             if ($configuration) {
                 $permissions[$enabledModule->getName()] = $configuration;
